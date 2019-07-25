@@ -13,3 +13,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.send('Hello')
 })
+
+app.get('/cs', (req, res) => {
+    res.send('Hello')
+})
