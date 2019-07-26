@@ -1,9 +1,16 @@
+const quiz = require('')
 const express = require('express')
+let exphbs  = require('express-handlebars');
+
 
 const app = express()
-
 const PORT = process.env.PORT || 3001
 app.listen(PORT, res => console.log('APP STARTED'))
+
+app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.set('view engine', '.hbs');
+
+
 
 app.use((req, res, next) => {
     console.log("Requesting: " + req.url)
@@ -11,9 +18,16 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.render('home', {
+        quiz: false
+    })
 })
 
-app.get('/cs', (req, res) => {
-    res.send('Hello')
+app.get('/quiz/:id', (req, res) => {
+    let data = quiz.getQuiz(req.params.id)
+
+    res.send('Hello', {
+        quiz: true,
+        data: data
+    })
 })
