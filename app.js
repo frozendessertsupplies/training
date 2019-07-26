@@ -7,7 +7,18 @@ const app = express()
 const PORT = process.env.PORT || 3001
 app.listen(PORT)
 
-app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.engine('.hbs', exphbs({
+    extname : '.hbs',
+    helpers : {
+        optionfiller : function(value, options) {
+            let data = ""
+            for(let i = 0; i < value.length; i++){
+                data += options.fn(value[i])
+            }
+            return data;
+        }
+    } 
+}));
 app.set('view engine', '.hbs');
 
 

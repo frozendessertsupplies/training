@@ -60,7 +60,7 @@ function getData(dept) {
 
     console.log("Test[id]: " + Test[dept])
     console.dir(Test)
-    return Test[dept];
+    return Test[dept].questions;
 }
 
 module.exports = {
