@@ -10,10 +10,10 @@ app.listen(PORT)
 app.engine('.hbs', exphbs({
     extname : '.hbs',
     helpers : {
-        optionfiller : function(value, options) {
+        optionfiller : function(value, opt) {
             let data = ""
             for(let i = 0; i < value.length; i++){
-                data += options.fn(value[i])
+                data += "<input type='radio'>" + opt.fn(value[i].options)
             }
             return data;
         }
