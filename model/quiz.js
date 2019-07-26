@@ -58,9 +58,9 @@ function getData(dept) {
     //     questions: Test[id].questions
     // };
 
-    console.log("Test[id]: " + Test[id])
+    console.log("Test[id]: " + Test[dept])
     console.dir(Test)
-    return null;
+    return Test;
 }
 
 module.exports = {

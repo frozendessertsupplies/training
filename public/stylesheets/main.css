@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: 20vw 60vw 20vw;
+    grid-template-rows: 20vw 60vw 20vw;
+}
+
+.options {
+    grid-column: 2;
+    grid-row: 1; 
+}
+
+.question {
+    grid-column: 2;
+    grid-row: 2;
+}

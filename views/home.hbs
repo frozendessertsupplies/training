@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="question">
-        {{#if quiz}}
+    {{#if quiz}}
+        <div class="question">
             {{> question}}
-        {{else}}
-            <div class="options">
-                <a href="/quiz/CustomerSolutions"><button>Customer Solutions</button></a>
-                <a href="/quiz/Warehouse"><button>Warehouse</button></a>
-            </div>
-        {{/if}}
-    </div>
+        </div>
+    {{else}}
+        <div class="options">
+            <a href="/quiz/CustomerSolutions"><button>Customer Solutions</button></a>
+            <a href="/quiz/Warehouse"><button>Warehouse</button></a>
+        </div>
+    {{/if}}
 </div>
