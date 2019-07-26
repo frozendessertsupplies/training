@@ -58,8 +58,7 @@ function getData(dept) {
     //     questions: Test[id].questions
     // };
 
-    console.log("Test[id]: " + Test[dept])
-    console.dir(Test)
+    console.dir(Test[dept].questions)
     return Test[dept].questions;
 }
 
