@@ -1,11 +1,11 @@
-const quiz = require('')
+const quiz = require('./model/quiz')
 const express = require('express')
 let exphbs  = require('express-handlebars');
 
 
 const app = express()
 const PORT = process.env.PORT || 3001
-app.listen(PORT, res => console.log('APP STARTED'))
+app.listen(PORT)
 
 app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
