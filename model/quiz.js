@@ -53,11 +53,14 @@ let Test = {
 };
 
 function getData(id) {
-    let data  = {
-        dept: Test[id],
-        questions: Test[id].questions
-    };
-    return data;
+    // let data  = {
+    //     dept: Test[id],
+    //     questions: Test[id].questions
+    // };
+
+    console.log("Test[id]: " + Test[id])
+    console.dir(Test)
+    return null;
 }
 
 module.exports = {
