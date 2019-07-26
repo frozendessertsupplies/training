@@ -1,5 +1,5 @@
 let Test = {
-    "Customer Solutions" : {
+    "CustomerSolutions" : {
         numQuestions : 2,
         questions : [
             {   
@@ -52,7 +52,7 @@ let Test = {
     }
 };
 
-function getData(id) {
+function getData(dept) {
     // let data  = {
     //     dept: Test[id],
     //     questions: Test[id].questions

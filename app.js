@@ -22,8 +22,8 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/quiz/:id', (req, res) => {
-    let data = quiz.getData(req.params.id)
+app.get('/quiz/:dept', (req, res) => {
+    let data = quiz.getData(req.params.dept)
 
     res.render('home', {
         quiz: true,
