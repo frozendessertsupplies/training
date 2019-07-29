@@ -1,11 +1,11 @@
 <span id={{dept}}></span>
 
-<h1>{{title}}</h1>
-<p>{{question}}</p>
-{{#if options}}
-    {{#optionfiller options}}
-        {{option}}
+<h1>{{object.title}}</h1>
+<p>{{object.question}}</p>
+{{#if object.options}}
+    {{#optionfiller object.options}}
+        {{object.option}}
     {{/optionfiller}}
-{{else if blank}}
+{{else if object.blank}}
     <input type="text" placeholder="Type your answer here">
 {{/if}}
