@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 
 app.get('/quiz/:dept', (req, res) => {
     let data = quiz.getData(req.params.dept)
-
+    console.log(data)
     res.render('home', {
         quiz: true,
         data: data

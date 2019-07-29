@@ -58,7 +58,6 @@ function getData(dept) {
     //     questions: Test[id].questions
     // };
 
-    console.dir(Test[dept].questions)
     return Test[dept].questions;
 }
 
