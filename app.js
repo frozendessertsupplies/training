@@ -16,7 +16,7 @@ app.engine('.hbs', exphbs({
             let data = ""
             for(let i = 0; i < value.length; i++){
                 console.log(value[i])
-                data += "<input type='radio'>" + opt.fn(value[i].options)
+                data += `<input type='radio' value='${value[i]}'>${value[i]}<br>` /*opt.fn(value[i].options)*/
             }
             
             return data;
