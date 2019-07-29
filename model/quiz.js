@@ -57,7 +57,6 @@ function getData(dept) {
     //     dept: Test[id],
     //     questions: Test[id].questions
     // };
-
     return Test[dept].questions;
 }
 

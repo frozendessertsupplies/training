@@ -1,8 +1,10 @@
 <div class="container">
     {{#if quiz}}
+    {{#each data}}
         <div class="question">
             {{> question}}
         </div>
+    {{/each}}
     {{else}}
         <div class="options">
             <a href="/quiz/CustomerSolutions"><button>Customer Solutions</button></a>
