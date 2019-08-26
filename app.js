@@ -1,4 +1,4 @@
-const quiz = require('./model/quiz')
+const quiz = require('./model/quiz_model')
 
 const express = require('express')
 let exphbs  = require('express-handlebars');
@@ -15,7 +15,7 @@ app.engine('.hbs', exphbs({
         optionfiller : function(value, opt) {
             let data = ""
             for(let i = 0; i < value.length; i++){
-                console.log(value[i])
+                
                 data += `<input type='radio' value='${value[i]}'>${value[i]}<br>` /*opt.fn(value[i].options)*/
             }
             
