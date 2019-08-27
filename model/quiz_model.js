@@ -52,7 +52,7 @@ let Test = {
 	]
 }
 
-function getData(dept) {
+function getQuiz(dept) {
 	
     let quiz = Test.quizzes.find((quiz) => {
 		return quiz.department = dept
@@ -62,5 +62,5 @@ function getData(dept) {
 }
 
 module.exports = {
-    getData : getData
+    getQuiz : getQuiz
 }
