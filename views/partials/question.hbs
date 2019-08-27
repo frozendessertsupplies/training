@@ -9,5 +9,6 @@
 {{else if blank}}
     <input type="text" placeholder="Type your answer here">
 {{/if}} -->
-
-{{data}}
+{{#each questions}}
+ <p>{{question}}</p>
+{{/each}}
