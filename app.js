@@ -38,8 +38,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/quiz/:dept', (req, res) => {
-    let data = JSON.parse(quiz.getData(req.params.dept))
-    console.log(data)
+    let data = quiz.getData(req.params.dept)
+    data = JSON.parse(data)
     res.render('home', {
         quiz: true,
         data: data
