@@ -58,6 +58,7 @@ function getData(dept) {
 		//return quiz if quiz.department == dept
         if( quiz.department == dept ) return quiz;
 	});
+	console.log(quiz)
 	return quiz
 }
 
