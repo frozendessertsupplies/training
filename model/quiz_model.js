@@ -53,12 +53,12 @@ let Test = {
 }
 
 function getData(dept) {
-
+	
     let quiz = Test.quizzes.find((quiz) => {
 		return quiz.department = dept
 	})
-	console.dir(quiz)
-	return quiz
+
+	return JSON.stringify(quiz)
 }
 
 module.exports = {
