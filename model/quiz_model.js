@@ -53,8 +53,10 @@ let Test = {
 }
 
 function getData(dept) {
+	console.log(dept)
     Test.quizzes.forEach(quiz => {
-        //return quiz if quiz.department == dept
+		//return quiz if quiz.department == dept
+		console.log(quiz.department)
         if( quiz.department == dept ) return quiz;
     });
 }
