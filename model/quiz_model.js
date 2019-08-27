@@ -54,10 +54,9 @@ let Test = {
 
 function getData(dept) {
 
-    let quiz = Test.quizzes.forEach(quiz => {
-		//return quiz if quiz.department == dept
-        if( quiz.department == dept ) return quiz;
-	});
+    let quiz = Test.quizzes.find((quiz) => {
+		return quiz.department = dept
+	})
 	console.dir(quiz)
 	return quiz
 }
