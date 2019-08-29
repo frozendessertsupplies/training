@@ -1,17 +1,14 @@
-<div class="content">
-    <h1>{{dept}}</h1>
-    <div class="container">
-        {{#if quiz}}
-        {{#each questions}}
+<div class="container">
+    {{#if quiz}}
+    {{#each questions}}
         <div class="question">
             {{> question}}
         </div>
-        {{/each}}
-        {{else}}
+    {{/each}}
+    {{else}}
         <div class="options">
             <a href="/quiz/Customer Solutions"><button>Customer Solutions</button></a>
             <a href="/quiz/Warehouse"><button>Warehouse</button></a>
         </div>
-        {{/if}}
-    </div>
+    {{/if}}
 </div>

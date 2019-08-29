@@ -3,13 +3,12 @@
     grid-template-columns: 20vw 60vw 20vw;
     grid-template-rows: 20vw 60vw 20vw;
     
-    
-
     background-color: white;
     
     border-radius: 25px;
     border: 2px solid white;
     padding: 1vw;
+    margin: 2vw;
 }
 
 .container {
@@ -19,8 +18,6 @@
 }
 
 .question {
-    /*grid-column: 2;
-    grid-row: 2;*/
     padding: 20px;
 }
 
