@@ -45,6 +45,8 @@ app.get('/quiz/:dept', (req, res) => {
 
     res.render('home', {
         quiz: true,
-        data: data
+        department: data.department,
+        manager_email: data.manager_email,
+        title: data.questions[0].title
     })
 })
