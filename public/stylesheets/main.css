@@ -1,14 +1,11 @@
 .content {
     display: grid;
-    grid-template-columns: 20vw 60vw 20vw;
-    grid-template-rows: 20vw 60vw 20vw;
-    
     background-color: white;
-    
     border-radius: 25px;
     border: 2px solid white;
     padding: 1vw;
-    margin: 2vw;
+    margin: 10vw;
+    height: 50vw;
 }
 
 .container {
@@ -29,4 +26,5 @@ button {
 
 body {
     background-color: aqua;
+    height: 100%;
 }
