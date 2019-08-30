@@ -41,12 +41,10 @@ app.get('/quiz/:dept', (req, res) => {
     let data = quiz.getQuiz(req.params.dept)
     data = JSON.parse(data)
 
-    console.log(data)
-
     res.render('home', {
         quiz: true,
         department: data.department,
         manager_email: data.manager_email,
-        title: data.questions[0].title
+        questions: data.questions
     })
 })

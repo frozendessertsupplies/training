@@ -1,5 +1,7 @@
 <div class="container">
     {{#if quiz}}
+    <span id="department" style="visibility: hidden">{{department}}</span>
+    <span id="email" style="visibility: hidden">{{manager_email}}</span>
     {{#each questions}}
         <div class="question_container">
             {{> question}}

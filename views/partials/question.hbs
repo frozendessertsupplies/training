@@ -1,3 +1,11 @@
-{{department}}
-{{manager_email}}
 {{title}}
+{{question_type}}
+{{question}}
+
+{{#if answers}}
+    {{#each answers}}
+        {{this}}
+    {{/each}}
+{{/if}}
+
+{{answer}}
