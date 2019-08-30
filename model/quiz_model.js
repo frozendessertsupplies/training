@@ -12,15 +12,9 @@ let Test = {
 					"title": "Question Two",
 					"question_type": "mChoice",
 					"question": "How many Company Values do we have?",
-					"answers": {
-						"a": 5,
-						"b": 6,
-						"c": 7,
-						"d": 8
-					},
-					"answer": {
-						"c": 7
-					}
+					"answers": [5,6,7,8],
+					"answer": 7
+					
 				}
 			]
 		},
@@ -37,15 +31,8 @@ let Test = {
 					"title": "Question Two",
 					"question_type": "mChoice",
 					"question": "Who controls the music?",
-					"answers": {
-						"a": "Isaac",
-						"b": "Hailey",
-						"c": "Hunter",
-						"d": "Everyone"
-					},
-					"answer": {
-						"d": "Everyone"
-					}
+					"answers": ["Isaac", "Hailey", "Hunter", "Everyone"],
+					"answer": "Everyone"
 				}
 			]
 		}
