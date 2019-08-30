@@ -1,12 +1,14 @@
-Title: {{title}} </br>
+<h3>{{title}}</h3>
 Type: {{question_type}} </br>
-Question: {{question}} </br>
+<h4>{{question}}</h4>
 
 {{#if answers}}
     Answers: </br>
     {{#each answers}}
-        {{this}}</br>
+        <input type="radio" name="{{id}}" value="{{this}}"> {{this}}
     {{/each}}
+{{else}}
+    <input type="text" id="id">
 {{/if}}
 
 The Answer: {{answer}} </br>
