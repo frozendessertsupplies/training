@@ -40,16 +40,11 @@ app.get('/', (req, res) => {
 app.get('/quiz/:dept', (req, res) => {
     let data = quiz.getQuiz(req.params.dept)
     data = JSON.parse(data)
-    dept = data.department
-    email = data.manager_email
-    questions = data.questions
 
-    console.log(dept, email, questions)
+    console.log(data)
 
     res.render('home', {
         quiz: true,
-        dept: dept,
-        email: email,
-        questions: questions,
+        data: data
     })
 })
