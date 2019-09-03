@@ -12,7 +12,7 @@ app.engine('.hbs', exphbs({
     extname : '.hbs',
     helpers : {
         radio_button :  function(id, answers){
-            console.log(id, answer)
+            console.log(id, answers)
             let temp = ""
             for(let i = 0; i >= answers.length; i++) {
                 temp += '<input type="radio" id="' + id + '" name="' + id + '" value="' + answers[i] + '"> ' + answers[i]
