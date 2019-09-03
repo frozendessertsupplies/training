@@ -11,17 +11,6 @@ app.use(express.static(__dirname + '/public'));
 
 app.engine('.hbs', exphbs({
     extname : '.hbs',
-    helpers : {
-        optionfiller : function(value, opt) {
-            let data = ""
-            for(let i = 0; i < value.length; i++){
-                
-                data += `<input type='radio' value='${value[i]}'>${value[i]}<br>` /*opt.fn(value[i].options)*/
-            }
-            
-            return data;
-        }
-    } 
 }));
 app.set('view engine', '.hbs');
 
@@ -40,7 +29,7 @@ app.get('/', (req, res) => {
 app.get('/quiz/:dept', (req, res) => {
     let data = quiz.getQuiz(req.params.dept)
     data = JSON.parse(data)
-
+    console.log(questions[0].id)
     res.render('home', {
         quiz: true,
         department: data.department,
