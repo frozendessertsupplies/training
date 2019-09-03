@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.get('/quiz/:dept', (req, res) => {
     let data = quiz.getQuiz(req.params.dept)
     data = JSON.parse(data)
-    console.log(questions[0].id)
+    console.log(data.questions[0].id)
     res.render('home', {
         quiz: true,
         department: data.department,
