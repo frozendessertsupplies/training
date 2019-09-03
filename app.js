@@ -11,6 +11,15 @@ app.use(express.static(__dirname + '/public'));
 
 app.engine('.hbs', exphbs({
     extname : '.hbs',
+    helpers : {
+        radio_button :  (id, answers) => {
+            let temp = ""
+            for(let i = 0; i >= answers.length; i++) {
+                temp += '<input type="radio" id="' + id + '" name="' + id + '" value="' + answers[i] + '"> ' + answers[i]
+            }
+            return temp
+        }
+    }
 }));
 app.set('view engine', '.hbs');
 

@@ -4,9 +4,9 @@ Type: {{question_type}} </br>
 
 {{#if answers}}
     Answers: </br>
-    {{#each answers}}
-        <input type="radio" id="{{answers[@index].id}}" name="{{id}}" value="{{this}}"> {{this}}
-    {{/each}}
+    {{#radio id answers}}
+        {{this}}
+    {{/radio}}
 {{else}}
     <input type="text" id="{{id}}">
 {{/if}}
