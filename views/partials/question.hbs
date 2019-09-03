@@ -4,9 +4,9 @@ Type: {{question_type}} </br>
 
 {{#if answers}}
     Answers: </br>
-    {{#radio id answers}}
+    {{#radio_button id answers}}
         {{this}}
-    {{/radio}}
+    {{/radio_button}}
 {{else}}
     <input type="text" id="{{id}}">
 {{/if}}
