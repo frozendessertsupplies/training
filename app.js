@@ -4,7 +4,6 @@ const express = require('express')
 let exphbs  = require('express-handlebars');
 
 const app = express()
-const PORT = process.env.PORT || 3001
 app.listen(PORT)
 
 app.use(express.static(__dirname + '/public'));
@@ -12,7 +11,8 @@ app.use(express.static(__dirname + '/public'));
 app.engine('.hbs', exphbs({
     extname : '.hbs',
     helpers : {
-        radio_button :  (id, answers) => {
+        radio_button :  function(id, answers){
+            console.log(id, answers)
             let temp = ""
             for(let i = 0; i >= answers.length; i++) {
                 temp += '<input type="radio" id="' + id + '" name="' + id + '" value="' + answers[i] + '"> ' + answers[i]
