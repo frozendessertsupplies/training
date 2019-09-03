@@ -13,11 +13,12 @@ app.engine('.hbs', exphbs({
     helpers : {
         radio_button :  function(id, answers){
             console.log(id, answers)
-            let temp = ""
-            for(let i = 0; i >= answers.length; i++) {
-                temp += '<input type="radio" id="' + id + '" name="' + id + '" value="' + answers[i] + '"> ' + answers[i]
+            let ret = ''
+            for (let i = 0; i < answers.length; i++) {
+                ret += `<input type='radio' id='${id}' name='${id}'> ${answers[i]}`
             }
-            return temp
+            console.log(ret)
+            return ret;
         }
     }
 }));
@@ -38,7 +39,7 @@ app.get('/', (req, res) => {
 app.get('/quiz/:dept', (req, res) => {
     let data = quiz.getQuiz(req.params.dept)
     data = JSON.parse(data)
-    console.log(data.questions[0].id)
+
     res.render('home', {
         quiz: true,
         department: data.department,
