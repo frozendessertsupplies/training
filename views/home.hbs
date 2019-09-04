@@ -3,10 +3,11 @@
     <span id="department" style="visibility: hidden">{{department}}</span>
     <span id="email" style="visibility: hidden">{{manager_email}}</span>
     {{#each questions}}
-        <div class="question_container">
+        <div class="question_container" id="{{@index}}">
             {{> question}}
         </div>
     {{/each}}
+    <button id="btn_next" onclick="changeQuestion()">Next</button>
     {{else}}
         <div class="options">
             <a href="/quiz/Customer Solutions"><button>Customer Solutions</button></a>
@@ -14,11 +15,8 @@
         </div>
     {{/if}}
 </div>
-<script>
-    let selected = []
-    
-    function answerChecker() {
 
-    }
-
-</script>
+<!-- 
+    in order to make one question appear at a time, make a big card for each question, 
+    then have a next button, the next button will just change the visibility of the other cards
+-->

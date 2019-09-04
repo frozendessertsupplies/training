@@ -45,3 +45,14 @@ app.get('/quiz/:dept', (req, res) => {
         questions: data.questions
     })
 })
+
+/**
+ * this isn't finished
+ * TODO: make sure the redirect will show a list of questions and the wrong answers?
+ */
+app.post('/api/check', (req, res) => {
+    quiz.checkAnswers(req.body.department, req.body.answers)
+        .then( data => {
+            res.redirect('/')
+        })
+})
