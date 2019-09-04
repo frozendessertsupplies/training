@@ -3,9 +3,15 @@
     <span id="department" style="visibility: hidden">{{department}}</span>
     <span id="email" style="visibility: hidden">{{manager_email}}</span>
     {{#each questions}}
-        <div class="question_container" id="{{@index}}">
+        {{#if @index == 0}}
+        <div class="question_container visible">
             {{> question}}
         </div>
+        {{else}}
+        <div class="question_container">
+            {{> question}}
+        </div>
+        {{/if}}
     {{/each}}
     <button id="btn_next" onclick="changeQuestion()">Next</button>
     {{else}}
