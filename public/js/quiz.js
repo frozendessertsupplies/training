@@ -23,24 +23,37 @@
             answers.push(document.getElementById(i).value)
         }   
     }
-
-    let reqBody = {
-        department : department,
-        answers : [],
-    }
     // send list to /api/check
     // route calls function that sends back json of passed and which questions were wrong
-    fetch('/api/check', {
+    let init = {
         method: 'GET',
-        body: JSON.stringify(reqBody),
         headers : {
            'Content-Type': 'application/json'
         }
-     })
-     .then(response => {
-        return response.json();
-     })
- }
+    }
+    fetch(`/api/${department}`, init )
+        .then(res => res.json())
+        .then(answers => {
+            let numCorrect = 0
+                let total = 0
+                let score = []
+            answers.forEach(function callback(answer, i) {
+                if(answer == answers[i]) {
+                    numCorrect += 1
+                    total += 1
+                    score.push(true)
+                } else {
+                    total += 1
+                    score.push(false)
+                }
+            });
+            let div = document.createElement("div")
+            div.append(numCorrect)
+            div.append(total)
+            div.append(score)
+            document.body.append(div)
+        })
+}
 
 
  function changeQuestion() {

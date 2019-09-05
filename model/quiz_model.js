@@ -54,40 +54,18 @@ function getQuiz(dept) {
 	return JSON.stringify(quiz)
 }
 
-function checkAnswers(department, answers) {
+function checkAnswers(dept) {
 	let correct = []
 	// get the quiz
-	let quiz = JSON.parse( getQuiz(department) )
+	let quiz = JSON.parse( getQuiz(dept) )
 
 	// add the correct answers to correct
 	quiz.questions.forEach(q => {
 		correct.push(q.answer)
 	});
-
-	// compare the given with correct
-	let numCorrect = 0
-	let total = 0
-	let which_wrong = []
-
-	for(let i = 0; i <= answers.length; i++) {
-		if(answers[i] == correct[i]){
-			numCorrect += 1;
-			total += 1;
-			which_wrong.push({question : i, correct: true})
-		} else {
-			total += 1;
-			which_wrong.push({question : i, correct: false})
-		}
-	}
-
-	// return object with numCorrect and array of t/f
-	let myQuiz = {
-		total : total,
-		numCorrect : numCorrect,
-		which_wrong : which_wrong
-	}
-
-	return JSON.stringify(myQuiz)
+	
+	// return the answers
+	return JSON.stringify(correct)
 }
 
 

@@ -53,8 +53,8 @@ app.get("/quiz/:dept", (req, res) => {
  * this isn't finished
  * TODO: make sure the redirect will show a list of questions and the wrong answers?
  */
-app.get("/api/check", (req, res) => {
-  let data = quiz.checkAnswers(req.body.department, req.body.answers);
+app.get("/api/:dept", (req, res) => {
+  let data = quiz.getAnswers(req.params.dept);
   data = JSON.parse(data);
 
   res.render("end", {
