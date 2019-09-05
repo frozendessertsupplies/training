@@ -45,10 +45,10 @@
                 // remove the next button
                 document.getElementById('btn_next').style.visibility = 'hidden';
                 document.getElementById('btn_check').style.visibility = 'visible';
-            } else {
-                // or else, show the next question
-                questions[i].classList.add('visible')
-            }
+            } 
+        } else {
+            // or else, show the next question
+            questions[i].classList.add('visible')
         }
     }
  }
