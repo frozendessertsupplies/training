@@ -54,7 +54,7 @@ function getQuiz(dept) {
 	return JSON.stringify(quiz)
 }
 
-function checkAnswers(dept) {
+function getAnswers(dept) {
 	let correct = []
 	// get the quiz
 	let quiz = JSON.parse( getQuiz(dept) )
@@ -71,5 +71,5 @@ function checkAnswers(dept) {
 
 module.exports = {
 	getQuiz : getQuiz,
-	checkAnswers : checkAnswers
+	getAnswers : getAnswers
 }
