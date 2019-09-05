@@ -56,10 +56,5 @@ app.get("/quiz/:dept", (req, res) => {
 app.get("/api/:dept", (req, res) => {
   let data = quiz.getAnswers(req.params.dept);
   data = JSON.parse(data);
-
-  res.render("end", {
-      total : data.total,
-      numCorrect : data.numCorrect,
-      wrong_list : data.wrong_list
-  });
+  res.send(data)
 });
