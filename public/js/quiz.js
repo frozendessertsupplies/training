@@ -5,10 +5,24 @@
 
  function checkAnswers() {
     // get a list of all the answers
-    let department = document.getElementById('department')
+    let department = document.getElementById('department').innerText
     let answers = []
 
-    let allAnswers = "document.something.something"
+    //getting all the answers
+    for(let i = 1; i <= 10; i++){
+        // check for radio buttons
+        if(document.getElementsByName(i)) {
+            let radio = document.getElementsByName(i);
+            for(let j = 0; j <= radio; j++) {
+                if(radio[i].checked){
+                    answers.push(radio[i].value)
+                }
+            }
+            // check for input field
+        } else if (document.getElementById(i)){
+            answers.push(document.getElementById(i).value)
+        }   
+    }
 
     let reqBody = {
         department : department,
@@ -17,15 +31,14 @@
     // send list to /api/check
     // route calls function that sends back json of passed and which questions were wrong
     fetch('/api/check', {
-        method: 'POST',
-        credentials: "include",
+        method: 'GET',
         body: JSON.stringify(reqBody),
         headers : {
            'Content-Type': 'application/json'
         }
      })
      .then(response => {
-      return response.json();
+        return response.json();
      })
  }
 

@@ -1,0 +1,8 @@
+<h1>You got {{numCorrect}}/{{total}} </h1>
+{{#each wrong_list}}
+    {{#if this}}
+        <div>Question {{@index}} - Right</div>
+    {{else}}
+        <div>Question {{@index}} - WRONG</div>
+    {{/if}}
+{{/each}}
