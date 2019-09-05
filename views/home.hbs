@@ -1,13 +1,14 @@
 <div class="container">
     {{#if quiz}}
-    <span id="department" style="visibility: hidden">{{department}}</span>
-    <span id="email" style="visibility: hidden">{{manager_email}}</span>
+        <span id="department" style="visibility: hidden">{{department}}</span>
+        <span id="email" style="visibility: hidden">{{manager_email}}</span>
     {{#each questions}}
         <div class="question_container {{#if @first}}visible{{/if}}">
             {{> question}}
         </div>
     {{/each}}
     <button id="btn_next" onclick="changeQuestion()">Next</button>
+    <button id="check" style="visibility:hidden" onclick="checkAnswers()">Submit</button>
     {{else}}
         <div class="options">
             <a href="/quiz/Customer Solutions"><button>Customer Solutions</button></a>
@@ -15,8 +16,3 @@
         </div>
     {{/if}}
 </div>
-
-<!-- 
-    in order to make one question appear at a time, make a big card for each question, 
-    then have a next button, the next button will just change the visibility of the other cards
--->
