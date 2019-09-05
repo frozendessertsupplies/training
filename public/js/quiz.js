@@ -53,6 +53,7 @@
             div.append(score)
             document.body.append(div)
         })
+        
 }
 
 
