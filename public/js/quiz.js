@@ -5,7 +5,7 @@
 
  function checkAnswers() {
     // get a list of all the answers
-    let department = document.getElementById('department').innerText
+    let department = document.getElementById('department').innerHTML
     let answers = []
 
     //getting all the answers
@@ -53,7 +53,7 @@
             div.append(score)
             document.body.append(div)
         })
-        
+
 }
 
 
