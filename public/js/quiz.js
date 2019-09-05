@@ -1,5 +1,5 @@
 /**
- * this functin will cover the checking answers part of the quiz
+ * this function will cover the checking answers part of the quiz
  *  gets the values off the page and make a fetch request
  */
 
@@ -35,6 +35,7 @@
 
     // loop through the questions
     for( let i = 0; i < questions.length; i++){
+        console.log(questions[i])
         //if the question is visible
         if(questions[i].classList.contains('visible')){
             //get rid of the visibility
@@ -43,6 +44,7 @@
             if(i == questions.length - 2) {
                 // remove the next button
                 document.getElementById('btn_next').style.visibility = 'hidden';
+                document.getElementById('btn_check').style.visibility = 'visible';
             } else {
                 // or else, show the next question
                 questions[i].classList.add('visible')

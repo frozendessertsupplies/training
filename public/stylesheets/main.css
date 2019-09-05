@@ -19,16 +19,16 @@
 }
 
 
-
 body {
     background-color: aqua;
     height: 100%;
+}
+
+.question_container {
+    visibility: hidden;
 }
 
 .visible {
     visibility: visible;
 }
 
-.question_container {
-    visibility: hidden;
-}
