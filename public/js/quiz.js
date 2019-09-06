@@ -16,7 +16,7 @@
             
             console.log({"this should be a radio list" : radio, i : i}) // is this even a radio list
             
-            for(let j = 0; j <= radio; j++) {
+            for(let j = 0; j < radio.length; j++) {
                 if(radio[i].checked){
                     answers += radio[i].value
                 }
