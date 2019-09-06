@@ -14,7 +14,7 @@
         if(document.getElementsByName(i)) {
             let radio = document.getElementsByName(i);
             
-            console.log(radio) // is this even a radio list
+            console.log("this should be a radio list" + radio) // is this even a radio list
             
             for(let j = 0; j <= radio; j++) {
                 if(radio[i].checked){
@@ -24,7 +24,7 @@
         // check for input field
         } else if (document.getElementById(i)){
 
-            console.log(document.getElementById(i)) // did I get the right element
+            console.log("this should be an input field: " + document.getElementById(i)) // did I get the right element
             
             answers.push(document.getElementById(i).value)
         }  else {
@@ -58,7 +58,6 @@
 
     // loop through the questions
     for( let i = 0; i < questions.length; i++){
-        console.log(questions[i])
         //if the question is visible
         if(questions[i].classList.contains('visible')){
             //get rid of the visibility
