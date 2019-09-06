@@ -13,6 +13,9 @@
         // check for radio buttons
         if(document.getElementsByName(i)) {
             let radio = document.getElementsByName(i);
+            
+            console.log(radio) // is this even a radio list
+            
             for(let j = 0; j <= radio; j++) {
                 if(radio[i].checked){
                     answers.push(radio[i].value)
@@ -20,6 +23,9 @@
             }
         // check for input field
         } else if (document.getElementById(i)){
+
+            console.log(document.getElementById(i)) // did I get the right element
+            
             answers.push(document.getElementById(i).value)
         }  else {
             // idk what it could be tbh
@@ -39,10 +45,11 @@
         }
     }
 
-    // send user answers then receive the score
-    fetch(`/api/${department}`, init )
-        .then(data => console.log(data))
-        .catch(err => console.err(err))
+    console.log(reqBody)
+    // // send user answers then receive the score
+    // fetch(`/api/${department}`, init )
+    //     .then(data => console.log(data))
+    //     .catch(err => console.err(err))
  }
 
 
