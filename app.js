@@ -51,11 +51,27 @@ app.get("/quiz/:dept", (req, res) => {
 
 
 app.post("/api/:dept", (req, res) => {
+    let choices = req.body.answers
+    let score = 0
+    let total = 0
+    let which_wrong = []
+
     // this is where the answer checking will happen
     quiz.getAnswers(req.params.dept)
         .then(answers => {
-            console.log(answers)
+            answers.forEach(function(element, i) {
+                if(answers[i] == choices[i]){
+                    score += 1
+                    which_wrong.push(true)
+                } else {
+                    which_wrong.push(false)
+                }
+                total += 0
+            });
+            
+            return JSON.stringify({score: score, total: total, which_wrong: which_wrong})
         })
+        .catch(err => console.err(err))
 });
 
 

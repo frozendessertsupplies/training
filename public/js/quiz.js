@@ -40,6 +40,7 @@
     }
 
     fetch(`/api/${department}`, init )
+        .then(data => console.log(data))
         .catch(err => console.err(err))
  }
 
