@@ -46,8 +46,10 @@
     }
 
     console.log(reqBody)
+
     // send user answers then receive the score
-    fetch(`/api/${department}`, init )
+    var request = new Request(`/api/${department}`, init)
+    fetch(request)
         .then(data => console.log(data))
         .catch(err => console.err(err))
  }
