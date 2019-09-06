@@ -39,6 +39,7 @@
         }
     }
 
+    // send user answers then receive the score
     fetch(`/api/${department}`, init )
         .then(data => console.log(data))
         .catch(err => console.err(err))
