@@ -17,8 +17,8 @@
             console.log({"this should be a radio list" : radio, i : i}) // is this even a radio list
             
             for(let j = 0; j < radio.length; j++) {
-                if(radio[i].checked){
-                    answers += radio[i].value
+                if(radio[j].checked){
+                    answers.push(radio[j].value)
                 }
             }
         // check for input field
@@ -26,7 +26,7 @@
 
             console.log({"this should be an input field: " : document.getElementById(i), i : i}) // did I get the right element
             
-            answers += document.getElementById(i).value
+            answers.push(document.getElementById(i).value)
         }  else {
             // idk what it could be tbh
         }
