@@ -65,7 +65,7 @@ function getAnswers(dept) {
 	});
 	
 	// return the answers
-	return JSON.stringify(correct)
+	return new Promise(JSON.stringify(correct))
 }
 
 

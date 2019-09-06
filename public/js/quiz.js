@@ -18,43 +18,30 @@
                     answers.push(radio[i].value)
                 }
             }
-            // check for input field
+        // check for input field
         } else if (document.getElementById(i)){
             answers.push(document.getElementById(i).value)
-        }   
+        }  else {
+            // idk what it could be tbh
+        }
     }
-    // send list to /api/check
-    // route calls function that sends back json of passed and which questions were wrong
+
+    reqBody = {
+        department: department,
+        answers : answers,
+    }
+
     let init = {
-        method: 'GET',
+        method: 'POST',
+        body: reqBody,
         headers : {
            'Content-Type': 'application/json'
         }
     }
-    fetch(`/api/${department}`, init )
-        .then(res => res.json())
-        .then(answers => {
-            let numCorrect = 0
-                let total = 0
-                let score = []
-            answers.forEach(function callback(answer, i) {
-                if(answer == answers[i]) {
-                    numCorrect += 1
-                    total += 1
-                    score.push(true)
-                } else {
-                    total += 1
-                    score.push(false)
-                }
-            });
-            let div = document.createElement("div")
-            div.append(numCorrect)
-            div.append(total)
-            div.append(score)
-            document.body.append(div)
-        })
 
-}
+    fetch(`/api/${department}`, init )
+        .catch(err => console.err(err))
+ }
 
 
  function changeQuestion() {
