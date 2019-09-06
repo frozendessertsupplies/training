@@ -46,10 +46,10 @@
     }
 
     console.log(reqBody)
-    // // send user answers then receive the score
-    // fetch(`/api/${department}`, init )
-    //     .then(data => console.log(data))
-    //     .catch(err => console.err(err))
+    // send user answers then receive the score
+    fetch(`/api/${department}`, init )
+        .then(data => console.log(data))
+        .catch(err => console.err(err))
  }
 
 
