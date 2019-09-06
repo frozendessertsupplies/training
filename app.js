@@ -54,7 +54,7 @@ app.post("/api/:dept", (req, res) => {
     // this is where the answer checking will happen
     quiz.getAnswers(req.params.dept)
         .then(answers => {
-
+            console.log(answers)
         })
 });
 
