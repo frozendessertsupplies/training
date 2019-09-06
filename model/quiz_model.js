@@ -55,17 +55,20 @@ function getQuiz(dept) {
 }
 
 function getAnswers(dept) {
-	let correct = []
-	// get the quiz
-	let quiz = JSON.parse( getQuiz(dept) )
-
-	// add the correct answers to correct
-	quiz.questions.forEach(q => {
-		correct.push(q.answer)
-	});
+	return new Promise((resolve, reject) => {
+		
+		let correct = []
+		// get the quiz
+		let quiz = JSON.parse( getQuiz(dept) )
 	
-	// return the answers
-	return new Promise(JSON.stringify(correct))
+		// add the correct answers to correct
+		quiz.questions.forEach(q => {
+			correct.push(q.answer)
+		});
+		
+		// return the answers
+		resolve(JSON.stringify(correct))
+	})
 }
 
 
