@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 app.get("/quiz/:dept", (req, res) => {
     console.log("beginning of get request")
     let data = quiz.getQuiz(req.params.dept);
-    console.log({'before .parse' : data})
+    console.log({'before .parse' : data, 'type of data: ' : typeof(data)})
     data = JSON.parse(data);
     console.log({'after .parse' : data})
 
