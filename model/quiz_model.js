@@ -67,6 +67,7 @@ function getAnswers(dept) {
 		});
 		
 		// return the answers
+		console.log({'in model: ' : quiz })
 		resolve(JSON.stringify(correct))
 	})
 }

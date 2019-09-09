@@ -53,6 +53,7 @@ app.get("/quiz/:dept", (req, res) => {
 
 
 app.post("/api/:dept", (req, res) => {
+    console.log({ "at app.post" : req.body })
     let choices = req.body.answers
     let score = 0
     let total = 0
@@ -61,6 +62,7 @@ app.post("/api/:dept", (req, res) => {
     // this is where the answer checking will happen
     quiz.getAnswers(req.params.dept)
         .then(answers => {
+            console.log({ "after getanswers" : answers})
             answers.forEach(function(element, i) {
                 if(answers[i] == choices[i]){
                     score += 1
