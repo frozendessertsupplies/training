@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 
 app.get("/quiz/:dept", (req, res) => {
   let data = quiz.getQuiz(req.params.dept);
-  data = JSON.parse(data);
+  //data = JSON.parse(data);
 
   res.render("home", {
     quiz: true,
