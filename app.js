@@ -44,7 +44,7 @@ app.get("/quiz/:dept", (req, res) => {
     let data = quiz.getQuiz(req.params.dept);
     console.log({'before .parse' : data, 'type of data: ' : typeof(data)})
     data = JSON.parse(data);
-    console.log({'after .parse' : data})
+    console.log({'after .parse' : data, 'type of data: ' : typeof(data)})
 
     res.render("home", {  
         quiz: true,
