@@ -40,15 +40,18 @@ app.get("/", (req, res) => {
 });
 
 app.get("/quiz/:dept", (req, res) => {
-  let data = quiz.getQuiz(req.params.dept);
-  data = JSON.parse(data);
+    console.log("beginning of get request")
+    let data = quiz.getQuiz(req.params.dept);
+    console.log({'before .parse' : data})
+    data = JSON.parse(data);
+    console.log({'after .parse' : data})
 
-  res.render("home", {
-    quiz: true,
-    department: data.department,
-    manager_email: data.manager_email,
-    questions: data.questions
-  });
+    res.render("home", {  
+        quiz: true,
+        department: data.department,
+        manager_email: data.manager_email,
+        questions: data.questions
+    });
 });
 
 
