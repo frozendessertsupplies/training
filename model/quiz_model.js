@@ -59,7 +59,8 @@ function getAnswers(dept) {
 		
 		let correct = []
 		// get the quiz
-		let quiz = JSON.parse( getQuiz(dept) )
+		let quiz = getQuiz(dept)
+		console.log({'type of quiz' : quiz})
 	
 		// add the correct answers to correct
 		quiz.questions.forEach(q => {
