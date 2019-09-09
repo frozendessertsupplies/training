@@ -45,8 +45,8 @@
         }
     }
 
-    console.log(reqBody)
-
+    console.log(department)
+    
     // send user answers then receive the score
     var request = new Request(`/api/${department}`, init)
     fetch(request)
