@@ -49,6 +49,7 @@
     
     // send user answers then receive the score
     var request = new Request(`/api/${department}`, init)
+    console.log(request)
     fetch(request)
         .then(data => console.log(data))
         .catch(err => console.err(err))
