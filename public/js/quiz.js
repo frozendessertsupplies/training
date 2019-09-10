@@ -43,7 +43,7 @@
             if(res.ok){
                 console.log(res)
             } else {
-                throw new Error('there was an error: \n' + res.statusText)
+                throw new Error(res.body)
             }
         })
         .catch(err => console.log(err))
