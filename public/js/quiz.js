@@ -32,13 +32,10 @@
         }
     }
 
-    let the_quiz = document.getElementById('the_quiz');
-    let formData = new FormData(the_quiz);
 
     reqBody = {
         department: department,
         answers : answers,
-        formData : formData
     }
      
     let init = {
@@ -52,7 +49,8 @@
     // send user answers then receive the score
     console.log({'before the fetch request: ' : reqBody} )
 
-    fetch(`/api/${department}`, init)
+    let url = `/api/${department}`
+    fetch(url, init)
         .then(data => console.log(data))
         .catch(err => console.err(err))
  }
