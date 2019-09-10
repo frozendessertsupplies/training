@@ -38,15 +38,25 @@
     console.log({'before the fetch request: ' : reqBody} )
 
     let url = `/api/${department}`
-    fetch(url, init)
-        .then(res => {
-            if(res.ok){
-                console.log(res)
-            } else {
-                throw new Error(res.body)
-            }
-        })
-        .catch(err => console.log(err))
+    // fetch(url, init)
+    //     .then(res => {
+    //         if(res.ok){
+    //             console.log(res)
+    //         } else {
+    //             throw new Error(res.statusText)
+    //         }
+    //     })
+    //     .catch(err => console.log(err))
+
+    // prepare request
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+    };
+    xhttp.open("POST", url,true);
+    xhttp.send();
  }
 
 
