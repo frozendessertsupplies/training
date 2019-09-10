@@ -39,7 +39,13 @@
 
     let url = `/api/${department}`
     fetch(url, init)
-        .then(data => console.log(data))
+        .then(res => {
+            if(res.ok){
+                console.log(res)
+            } else {
+                throw new Error('there was an error: \n' + res.statusText)
+            }
+        })
         .catch(err => console.err(err))
  }
 
