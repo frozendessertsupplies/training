@@ -46,7 +46,7 @@
                 throw new Error('there was an error: \n' + res.statusText)
             }
         })
-        .catch(err => console.err(err))
+        .catch(err => console.log(err))
  }
 
 
