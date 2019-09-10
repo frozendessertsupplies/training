@@ -1,8 +1,3 @@
-/**
- * this function will cover the checking answers part of the quiz
- *  gets the values off the page and make a fetch request
- */
-
  function checkAnswers() {
     // get a list of all the answers
     let department = document.getElementById('department').innerHTML
@@ -13,9 +8,6 @@
         // check for radio buttons
         if(document.getElementsByName(i).length > 0) {
             let radio = document.getElementsByName(i);
-            
-            console.log({"this should be a radio list" : radio, i : i}) // is this even a radio list
-            
             for(let j = 0; j < radio.length; j++) {
                 if(radio[j].checked){
                     answers.push(radio[j].value)
@@ -23,27 +15,23 @@
             }
         // check for input field
         } else if (document.getElementById(i)){
-
-            console.log({"this should be an input field: " : document.getElementById(i), i : i}) // did I get the right element
-            
             answers.push(document.getElementById(i).value)
         }  else {
-            // idk what it could be tbh
+            console.log('A quiz question is neither an input field or a radio')
         }
     }
 
 
     reqBody = {
         department: department,
-        answers : answers,
+        answers : answers
     }
      
     let init = {
         method: 'POST',
         body: reqBody,
-        headers : {
-            'Content-Type': 'application/json'
-        }
+        credentials: 'include',
+        headers : {'Content-Type': 'application/json'}
     }
 
     // send user answers then receive the score
