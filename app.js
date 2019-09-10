@@ -56,7 +56,7 @@ app.get("/quiz/:dept", (req, res) => {
 
 
 app.post("/api/:dept", (req, res) => {
-    console.log({ "at app.post" : req.body })
+    console.log({ "at app.post, form data" : req.body.formData })
     let choices = req.body.answers
     let score = 0
     let total = 0

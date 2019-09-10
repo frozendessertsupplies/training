@@ -2,6 +2,7 @@
     {{#if quiz}}
         <span id="department" style="visibility: hidden">{{department}}</span>
         <span id="email" style="visibility: hidden">{{manager_email}}</span>
+    <form id="the_quiz">
     {{#each questions}}
         {{#if @first}}
             <div class="question_container visible">
@@ -13,6 +14,7 @@
             </div>
         {{/if}}
     {{/each}}
+    </form>
     <button id="btn_next" onclick="changeQuestion()">Next</button>
     <button id="btn_check" style="visibility:hidden" onclick="checkAnswers()">Submit</button>
     {{else}}
